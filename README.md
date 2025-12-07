@@ -4,7 +4,7 @@
 [<img alt="crates.io" src="https://img.shields.io/crates/v/luhproc.svg?style=for-the-badge&color=fc8d62&logo=rust" height="20">](https://crates.io/crates/luhproc)
 [<img alt="docs.rs" src="https://img.shields.io/badge/docs.rs-luhproc-66c2a5?style=for-the-badge&labelColor=555555&logo=docs.rs" height="20">](https://docs.rs/luhproc)
 
-A lightweight Background Process Manager
+A lightweight background process manager
 <br>
 > made with love s.c
 

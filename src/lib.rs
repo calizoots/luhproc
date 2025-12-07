@@ -6,7 +6,7 @@
 //!
 //! # luhproc
 //! 
-//! A lightweight Background Process Manager
+//! A lightweight background process manager
 //!
 //! > made with love s.c
 //!
