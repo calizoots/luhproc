@@ -9,7 +9,7 @@ A lightweight Background Process Manager
 > made with love s.c
 
 `luhproc` provides a simple system for spawning, tracking, and stopping
-background worker processes in Rust applications.  
+background worker processes in Rust applications.
 
 It is built around two core ideas:
 - **Workers are identified by environment variables** (e.g. `MY_TASK=1`)
@@ -18,6 +18,38 @@ It is built around two core ideas:
 This makes it easy to run small persistent tasks (indexers, watchers,
 refreshers, schedulers, etc.) without needing systemd, Docker, or any
 external supervisor.
+
+## Quick Start
+
+Add `luhtwin` to your `Cargo.toml`:
+```toml
+[dependencies]
+luhproc = "0.0.1"
+```
+
+### Example
+
+```rust
+
+static PM: OnceLock<ProcessManager> = OnceLock::new();
+
+fn child_work() -> LuhTwin<()> {
+    info!("hello from the child thread");
+    Ok(())
+}
+
+fn main() -> LuhTwin<() {
+    PM.set(process_manager!("MOTHAPP" => start_moth)
+           .encase(|| "failed to make process_manager")?)
+        .unwrap();
+
+    PM.get().unwrap().check()
+        .encase(|| "failed to run child process")?;
+
+    PM.get().unwrap().start("MOTHAPP", "app", None)
+    .encase(|| "failed to start moth app")?;
+}
+```
 
 ---
 
