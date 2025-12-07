@@ -1,0 +1,15 @@
+[package]
+name = "luhproc"
+version = "0.1.0"
+authors = ["cali zoots <calizoots@gmail.com>"]
+edition = "2021"
+description = "A beta horrible Rust error handling library with AnyError and context macros"
+license-file = "LICENSE"
+repository = "https://github.com/calizoots/luhtwin"
+
+[dependencies]
+nix = { version = "0.30", features = ["signal"] }
+chrono = "0.4"
+luhtwin = "0.1.4"
+luhcore = "0.0.1"
+luhlog = "0.1.0"
