@@ -24,7 +24,7 @@ external supervisor.
 Add `luhtwin` to your `Cargo.toml`:
 ```toml
 [dependencies]
-luhproc = "0.0.1"
+luhproc = "0.1"
 ```
 
 ### Example
